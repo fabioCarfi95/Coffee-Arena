@@ -1,0 +1,11 @@
+<mat-toolbar>
+  <p class="application-name">Coffee Arena</p>
+
+  <mat-divider [vertical]="true"></mat-divider>
+  <p>{{ time | date: 'd MMM y - hh:mm a' }}</p>
+
+  <span class="fill-remaining-space"></span>
+
+  <!--<button mat-icon-button *ngIf="logged" (click)="logout()"><mat-icon>logout</mat-icon></button>-->
+  <button mat-icon-button><mat-icon>logout</mat-icon></button>
+</mat-toolbar>

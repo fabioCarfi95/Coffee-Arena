@@ -1,0 +1,40 @@
+<div class="Container">
+  <div class="LoginSection">
+
+    <div mat-dialog-content class="loginFields">
+
+      <div class="icon_container">
+        <img src="assets/img/logo_icosaf.png" alt="image" class="coffeeArena_logo">
+      </div>
+
+      <form [formGroup]="loginForm">
+        <div class="loginTags">
+          <mat-form-field appearance="outline" class="loginTags">
+              <mat-label>Username</mat-label>
+              <input matInput required type="text" matInput formControlName="username" class="loginInput">
+          </mat-form-field>
+        </div>
+
+        <div class="loginTags">
+          <mat-form-field appearance="outline" class="loginTags">
+            <mat-label>Password</mat-label>
+            <input matInput required [type]="hidePassword ? 'password' : 'text'" formControlName="password" class="loginInput">
+            <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword"
+                [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword" tabindex="-1"
+                class="hide_button">
+                <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+
+        <div *ngIf="loginError" class="error">
+          <span><b>{{loginErrorMessage}}</b></span>
+        </div>
+
+        <div class="loginTags">
+          <button mat-raised-button class="loginButton" (click)="submit()">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

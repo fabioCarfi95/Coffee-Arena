@@ -1,0 +1,68 @@
+.LoginSection {
+  width:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginFields {
+  margin: 5%;
+  border: 2px solid #2c303b;
+  border-radius: 5%;
+  padding: 4% 2.5%;
+}
+
+.icon_container {
+  display: flex;
+  justify-content: center;
+}
+
+.coffeeArena_logo {
+  height: 25%;
+  position: relative;
+  margin: 1%;
+}
+
+.loginTags {
+  margin: 2% 0%;
+  color: gray;
+}
+
+.hide_button {
+  background: #e2e3e5;
+  border-color: #d6d8db;
+}
+
+.loginButton {
+  width: 50%;
+  background-color: #485061;
+  color: white;
+  margin: 2% 25%;
+}
+
+.loginButton:focus, .loginButton:hover {
+background-color: #003399;
+color: white;
+}
+
+.loginButton:disabled {
+background-color: #666b7b;
+color: #ccc;
+}
+
+.error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: red;
+  padding: 3%;
+  border-radius: 5px;
+}
+
+.mat-dialog-container {
+  background-color: #485061;
+}
+
+::ng-deep mat-form-field {
+  margin: 2%;
+  width: 25em;
+}

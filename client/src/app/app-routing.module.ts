@@ -1,9 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { HOME, LOGIN } from './constants/constants';
+
 import { Page404Component } from './components/page404/page404.component';
+import { LoginComponent } from './components/login/login.component';
+import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
+  {path: '', redirectTo: LOGIN, pathMatch: 'full'},
+  {path: LOGIN, component: LoginComponent},
+  {path: HOME, component: HomeComponent},
   {path:"**", component:Page404Component}
 ];
 
@@ -15,5 +22,7 @@ export class AppRoutingModule { }
 
 // Insert here all the components related to routing actions
 export const routingComponents = [
+  LoginComponent,
+  HomeComponent,
   Page404Component
 ]

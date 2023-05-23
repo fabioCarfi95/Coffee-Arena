@@ -7,7 +7,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/fabioCarfi95/Coffee-Arena/server/method/login"
+	"github.com/fabioCarfi95/Coffee-Arena/server/method"
 	"github.com/gin-gonic/gin"
 )
 
@@ -29,8 +29,9 @@ func handleRequests() {
 	log.Println("Creating routes")
 
 	// Specify endpoints
-	router.GET("/", method.HomePage)
-	router.POST("/userinfo", login.UserInfo)
+	//	router.GET("/", method.HomePage)
+	router.POST("/userinfo", method.UserInfo)
+	router.GET("/nextsession", nextSession)
 
 	log.Printf("Listen&Serve on %s:%d", address, port)
 	// log.Fatal(http.ListenAndServe(address+":"+strconv.Itoa(port), router))
@@ -62,6 +63,6 @@ func init() {
 }
 
 func main() {
-	setupDB()
+	//setupDB()
 	handleRequests()
 }

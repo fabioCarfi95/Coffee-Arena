@@ -7,8 +7,8 @@ import (
 	"log"
 	"os"
 
+	"github.com/fabioCarfi95/Coffee-Arena/server/method/login"
 	"github.com/gin-gonic/gin"
-	"github.com/fabiocarfi95/Coffee-Arena/server/method"
 )
 
 var (
@@ -29,8 +29,8 @@ func handleRequests() {
 	log.Println("Creating routes")
 
 	// Specify endpoints
-	router.GET("/", method.homePage)
-	router.POST("/userinfo", method.UserInfo)
+	router.GET("/", method.HomePage)
+	router.POST("/userinfo", login.UserInfo)
 
 	log.Printf("Listen&Serve on %s:%d", address, port)
 	// log.Fatal(http.ListenAndServe(address+":"+strconv.Itoa(port), router))

@@ -1,4 +1,4 @@
-package main
+package method
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func homePage(c *gin.Context) {
+func HomePage(c *gin.Context) {
 	fmt.Fprintf(c.Writer, "Welcome to the HomePage!")
 	fmt.Println("Endpoint hit: homePage")
 }

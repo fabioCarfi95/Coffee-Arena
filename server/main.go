@@ -8,7 +8,7 @@ import (
 	"os"
 	"strconv"
 
-	_ "github.com/fabioCarfi95/Coffee-Arena/server/methods"
+	_ "server/methods"
 
 	"github.com/gorilla/mux"
 )
@@ -29,6 +29,7 @@ func handleRequests() {
 	// Create new router
 	router := mux.NewRouter()
 	log.Println("Creating routes")
+	
 	// Specify endpoints
 	router.HandleFunc("/", homePage).Methods("GET")
 	router.HandleFunc("/userinfo", userInfo).Methods("POST")

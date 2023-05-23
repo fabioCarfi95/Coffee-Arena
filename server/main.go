@@ -4,13 +4,11 @@ import (
 	"database/sql"
 	"flag"
 	"log"
-	"net/http"
 	"os"
-	"strconv"
 
-	_ "server/methods"
+	"methods/post"
 
-	"github.com/gorilla/mux"
+	"github.com/gin-gonic/gin"
 )
 
 var (
@@ -27,15 +25,15 @@ var (
 
 func handleRequests() {
 	// Create new router
-	router := mux.NewRouter()
+	router := gin.New().RouterGroup
 	log.Println("Creating routes")
-	
+
 	// Specify endpoints
-	router.HandleFunc("/", homePage).Methods("GET")
-	router.HandleFunc("/userinfo", userInfo).Methods("POST")
+	router.GET("/", homePage)
+	router.POST("/userinfo", post.UserInfo)
 
 	log.Printf("Listen&Serve on %s:%d", address, port)
-	log.Fatal(http.ListenAndServe(address+":"+strconv.Itoa(port), router))
+	// log.Fatal(http.ListenAndServe(address+":"+strconv.Itoa(port), router))
 }
 
 func init() {

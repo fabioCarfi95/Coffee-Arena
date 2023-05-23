@@ -2,10 +2,11 @@ package methods
 
 import (
 	"fmt"
-	"net/http"
+
+	"github.com/gin-gonic/gin"
 )
 
-func userInfo(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintln(w, "retrieve USER INFO")
+func UserInfo(c *gin.Context) {
+	fmt.Fprintln(c.Writer, "retrieve USER INFO")
 	fmt.Println("Endpoint hit: userinfo")
 }

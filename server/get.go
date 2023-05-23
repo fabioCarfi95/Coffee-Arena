@@ -2,10 +2,11 @@ package main
 
 import (
 	"fmt"
-	"net/http"
+
+	"github.com/gin-gonic/gin"
 )
 
-func homePage(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Welcome to the HomePage!")
+func homePage(c *gin.Context) {
+	fmt.Fprintf(c.Writer, "Welcome to the HomePage!")
 	fmt.Println("Endpoint hit: homePage")
 }

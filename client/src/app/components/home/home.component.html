@@ -1,1 +1,31 @@
-<p>home works!</p>
+<div class="container">
+  <div class="HomeSection">
+    <div mat-dialog-content class="homeFields">
+      <div class="topSection">
+        <mat-grid-list cols="2" rowHeight="2:1">
+          <mat-grid-tile>
+            <div class="sessionAvailableTitle">{{sessionAvailableTitleMessage}}</div>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <div class="sessionAvailableTimer">{{sessionAvailableTimer}}</div>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+      <div class="scrollSection">
+        <mat-card *ngFor="let item of game_choices">
+          <mat-card-content>
+            <div class="card-content">
+              <div class="title-section">
+                <h3 class="title">{{ item.title }}</h3>
+                <p  class="description">{{ item.description }}</p>
+              </div>
+              <div class="button-section">
+                <button mat-raised-button color="primary" [disabled]="!sessionStart" (click)="join(item.room)">Click Me</button>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

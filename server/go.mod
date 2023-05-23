@@ -1,8 +1,12 @@
-module github.com/fabioCarfi95/Coffee-Arena
+module github.com/fabiocarfi95/Coffee-Arena/server
 
 go 1.20
 
-require github.com/gin-gonic/gin v1.9.0
+require (
+	github.com/dgrijalva/jwt-go v3.2.0+incompatible
+	github.com/gin-gonic/gin v1.9.0
+	github.com/go-sql-driver/mysql v1.7.1
+)
 
 require (
 	github.com/bytedance/sonic v1.8.0 // indirect

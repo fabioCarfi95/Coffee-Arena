@@ -3,12 +3,12 @@ package main
 import (
 	"database/sql"
 	"flag"
+	"fmt"
 	"log"
 	"os"
 
-	"methods/post"
-
 	"github.com/gin-gonic/gin"
+	"github.com/fabiocarfi95/Coffee-Arena/server/method"
 )
 
 var (
@@ -25,15 +25,18 @@ var (
 
 func handleRequests() {
 	// Create new router
-	router := gin.New().RouterGroup
+	router := gin.Default()
 	log.Println("Creating routes")
 
 	// Specify endpoints
-	router.GET("/", homePage)
-	router.POST("/userinfo", post.UserInfo)
+	router.GET("/", method.homePage)
+	router.POST("/userinfo", method.UserInfo)
 
 	log.Printf("Listen&Serve on %s:%d", address, port)
 	// log.Fatal(http.ListenAndServe(address+":"+strconv.Itoa(port), router))
+
+	runAddress := fmt.Sprintf("%s:%d", address, port)
+	router.Run(runAddress)
 }
 
 func init() {

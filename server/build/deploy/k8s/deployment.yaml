@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+ 
+metadata:
+  name: coffee-arena-deployment
+  labels:
+    app: coffee-arena
+ 
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: coffee-arena
+  template:
+    metadata:
+      labels:
+        app: coffee-arena
+    spec:
+      containers:
+        - name: golang
+          image: coffee-arena:latest
+          ports:
+            - containerPort: 8888
+          env:
+            - name: HTTP_PORT
+              value: "8888"
+            - name: DB_PORT
+              value: "19928" # This comes from ngrok. You will see that later.
+            - name: DB_NAME
+              value: "coffe_arena_db"
+            - name: DB_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: coffee-arena-secret
+                  key: db-host
+            - name: DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: coffee-arena-secret
+                  key: db-user
+            - name: DB_PASS
+              valueFrom:
+                secretKeyRef:
+                  name: coffee-arena-secret
+                  key: db-pass

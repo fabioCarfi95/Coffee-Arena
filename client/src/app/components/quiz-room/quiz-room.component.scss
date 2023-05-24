@@ -10,6 +10,7 @@
   border: 2px solid #2c303b;
   border-radius: 20px;
   width: 40%;
+  background-color: #f5f5f5;
 }
 
 // Button section
@@ -26,6 +27,13 @@
   flex: 1;
   width: 9%;
   min-width: unset;
+  background-color: #2c303b;
+  color: white;
+}
+
+.chooseQuestionButton:disabled {
+  background-color: #6086ef;
+  color: white;
 }
 
 // Question section
@@ -35,6 +43,7 @@
   border: 2px solid grey;
   margin: 0% 1.5%;
   border-radius: 20px;
+  background-color: #ABC270;
 }
 
 .question_id_section {
@@ -97,6 +106,7 @@
 mat-card {
   border: 1px solid grey;
   margin-bottom: 2%;
+  background-color: #FEC868;
 }
 
 .card-content {

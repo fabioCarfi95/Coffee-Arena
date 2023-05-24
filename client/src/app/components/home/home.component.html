@@ -12,20 +12,22 @@
         </mat-grid-list>
       </div>
       <div class="scrollSection">
-        <mat-card *ngFor="let item of game_choices">
-          <mat-card-content>
-            <div class="card-content">
-              <div class="title-section">
-                <h3 class="title">{{ item.title }}</h3>
-                <p  class="description">{{ item.description }}</p>
+        <a *ngFor="let item of game_choices" class="gameCard" (click)="join(item.room)">
+          <mat-card [ngStyle]="{'background-image':'url('+item.background+')',
+                                'background-size': 'cover', 'background-repeat': 'no-repeat',
+                                'background-position': 'center', 'z-index':'-1'}">
+            <mat-card-content>
+              <div class="card-content">
+                <div class="title-section">
+                  <h3 class="title">{{ item.title }}</h3>
+                  <p  class="description">{{ item.description }}</p>
+                </div>
               </div>
-              <div class="button-section">
-                <button mat-raised-button color="primary" [disabled]="!sessionStart" (click)="join(item.room)">Join the Room</button>
-              </div>
-            </div>
-          </mat-card-content>
-        </mat-card>
+            </mat-card-content>
+          </mat-card>
+        </a>
       </div>
+
     </div>
   </div>
 </div>

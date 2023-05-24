@@ -15,9 +15,9 @@ export class HomeComponent implements OnInit {
   public sessionAvailableTitleMessage: string;
   public sessionAvailableTimer: string;
   public game_choices = [
-    {title: "1 vs 1", description: "Give your best versus a college", background: "", room: "1"},
-    {title: "2 vs 2", description: "Lets create a team to win", background: "", room: "2"},
-    {title: "Arena",  description: "One against all", background: "", room: "3"}
+    {title: "1 vs 1", description: "Give your best versus a college", background: "/assets/images/home_1vs1.png", room: "1"},
+    {title: "2 vs 2", description: "Lets create a team to win", background: "/assets/images/home_2vs2.png", room: "2"},
+    {title: "Arena",  description: "One against all", background: "/assets/images/home_arena.png", room: "3"}
   ];
 
   constructor(private router: Router, private http: HttpClient) {

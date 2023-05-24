@@ -8,13 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class RankingComponent implements OnInit {
 
   public rankings = [
-    {nickname:"Dario Ciaudano", points:"100"},
-    {nickname:"Fabio Carfì", points:"90"},
-    {nickname:"Amerigo Mancino", points:"70"},
-    {nickname:"Simone Tiburzi", points:"60"},
-    {nickname:"Fabiana Bonfante", points:"54"},
-    {nickname:"Alessio Saccardo", points:"49"},
-    {nickname:"Gennaro Lo Stupido", points:"20"},
+    {nickname:"Dario", points:"100"},
+    {nickname:"Fabio", points:"90"},
+    {nickname:"Luca", points:"70"},
+    {nickname:"Simone", points:"60"},
+    {nickname:"Fabiana", points:"54"},
+    {nickname:"Alessio", points:"49"},
+    {nickname:"Gennaro", points:"20"},
   ]
   constructor() { }
 

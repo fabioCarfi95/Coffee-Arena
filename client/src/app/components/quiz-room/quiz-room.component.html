@@ -1,1 +1,44 @@
-<p>quiz-room works!</p>
+<div class="container">
+  <div class="QuizRoomSection">
+    <div mat-dialog-content class="quizRoomFields">
+
+      <!-- Sezione con un button per ogni domanda -->
+      <div class="buttonsSection">
+        <button mat-raised-button  class="chooseQuestionButton"
+                *ngFor="let question of questions; let i=index" (click)="chooseQuestion(i)" [disabled]="i===currentQuestionIndex">
+          {{i+1}}
+        </button>
+      </div>
+
+      <!-- Sezione in alto della domanda -->
+      <div class="questionSection">
+        <div class="question_id_section">
+          <h3 class="question_id">{{ questions[currentQuestionIndex]["question-id"] }}</h3>
+        </div>
+        <div class="question_text_section">
+          <h3 class="question_text">{{ questions[currentQuestionIndex]["question-text"] }}</h3>
+        </div>
+      </div>
+
+      <!-- Lista delle risposte -->
+      <div class="answersList">
+        <div class="scroll-section">
+          <mat-card *ngFor="let answer of questions[currentQuestionIndex]['answers']" (click)="selectAnswer(answer)">
+            <mat-card-content>
+              <div class="card-content">
+                <div class="response-section">
+                  <h3 class="answer_text">{{ answer["answer-text"] }}</h3>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+        <div class="submitSection">
+          <button mat-raised-button color="primary" (click)="submit()">Submit</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

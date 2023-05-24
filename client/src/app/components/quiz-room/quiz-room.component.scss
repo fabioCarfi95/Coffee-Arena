@@ -1,0 +1,131 @@
+.QuizRoomSection {
+  width:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quizRoomFields {
+  margin: 2% 5%;
+  border: 2px solid #2c303b;
+  border-radius: 20px;
+  width: 40%;
+}
+
+// Button section
+.buttonsSection {
+  padding: 1% 1.5%;
+  margin: 0.5% 0%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chooseQuestionButton{
+  padding: 0% 1%;
+  flex: 1;
+  width: 9%;
+  min-width: unset;
+}
+
+// Question section
+.questionSection {
+  height: 12vh;
+  display: flex;
+  border: 2px solid grey;
+  margin: 0% 1.5%;
+  border-radius: 20px;
+}
+
+.question_id_section {
+  flex:0.1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.question_text_section {
+  flex:0.9;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 0% 3%;
+}
+
+.question_id {
+  margin: 0%;
+  font-size: x-large;
+}
+
+.question_text {
+  margin: 0%;
+  font-size: x-large;
+}
+
+/* Scroll Section */
+.answersList {
+  margin: 1.75% 0.75% 0%;
+  padding: 0;
+  height: 58vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.scroll-section {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.5% 1% 2%;
+}
+
+/* Scrollbar style */
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 10px lightgray;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: #bfbfbf;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #999999;
+}
+
+// Cards settings
+mat-card {
+  border: 1px solid grey;
+  margin-bottom: 2%;
+}
+
+.card-content {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+
+.card-content {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.response-section {
+  flex: 1;
+  padding: 0% 1%;
+}
+
+.answer_text {
+  font-size: large;
+  margin: 5px 0px;
+  text-align: center;
+}
+
+.submitSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1% 0%;
+}
